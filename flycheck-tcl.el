@@ -1,4 +1,4 @@
-;;; flycheck-tcl.el --- A flycheck checker for Tcl using ActiveState's tclchecker -*- lexical-binding: t; -*-
+;;; flycheck-tcl.el --- A flycheck checker for Tcl using tclchecker
 
 ;; Copyright (C) 2014-2018 Niels Widger
 
