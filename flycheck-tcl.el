@@ -35,6 +35,11 @@
 
 ;;;; Setup
 
+;; Add the following to your init file:
+;;
+;;    (with-eval-after-load 'flycheck
+;;      (flycheck-tcl-setup))
+
 ;;; Code:
 
 (require 'flycheck)
