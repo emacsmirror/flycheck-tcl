@@ -16,4 +16,5 @@ In your `init.el`:
   (flycheck-tcl-setup))
 ```
 
+[badge-melpa]: http://melpa.org/packages/flycheck-ocaml-badge.svg
 [MELPA]: http://melpa.org
