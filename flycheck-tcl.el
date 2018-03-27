@@ -1,14 +1,39 @@
-;;; flycheck-tcl.el --- A flycheck checker for Tcl using ActiveState's tclchecker
+;;; flycheck-tcl.el --- A flycheck checker for Tcl using ActiveState's tclchecker -*- lexical-binding: t; -*-
 
-;; Copyright 2014 Niels Widger
-;;
-;; Author: Niels Widger
+;; Copyright (C) 2014-2018 Niels Widger
+
+;; Author: Niels Widger <niels.widger@gmail.com>
+;; URL: https://github.com/nwidger/flycheck-tcl
 ;; Version: 0.4
-;; Package-Requires: ((flycheck "0.17"))
+;; Package-Requires: ((emacs "24.4") (flycheck "0.22"))
+
+;; This file is not part of GNU Emacs.
+
+;; Permission is hereby granted, free of charge, to any person
+;; obtaining a copy of this software and associated documentation
+;; files (the "Software"), to deal in the Software without
+;; restriction, including without limitation the rights to use, copy,
+;; modify, merge, publish, distribute, sublicense, and/or sell copies
+;; of the Software, and to permit persons to whom the Software is
+;; furnished to do so, subject to the following conditions:
+
+;; The above copyright notice and this permission notice shall be
+;; included in all copies or substantial portions of the Software.
+
+;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+;; EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+;; MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+;; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+;; BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+;; ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+;; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+;; SOFTWARE.
 
 ;;; Commentary:
 
 ;; Add a Tcl checker to Flycheck using ActiveState's tclchecker.
+
+;;;; Setup
 
 ;;; Code:
 
@@ -31,7 +56,12 @@ string is a package name with an optional version number attached such as `Tcl' 
    (error line-start (file-name) ":" line " (" (one-or-more (any alpha)) ") " (message) line-end))
   :modes tcl-mode)
 
-(add-to-list 'flycheck-checkers 'tcl-tclchecker)
+;;;###autoload
+(defun flycheck-tcl-setup ()
+  "Setup Flycheck Tcl.
+Add `tcl-tclchecker' to `flycheck-checkers'."
+  (interactive)
+  (add-to-list 'flycheck-checkers 'tcl-tclchecker))
 
 (provide 'flycheck-tcl)
 
